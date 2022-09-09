@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxapp/my_home_page.dart';
-
-void main() {
+//import 'helper/init_controller.dart' as di;
+import 'helper/init_dependency.dart';
+Future<void>  main() async {
+  //WidgetsFlutterBinding.ensureInitialized();
+  //await di.init();
   runApp(const MyApp());
 }
 
@@ -13,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: InitDep(),
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
